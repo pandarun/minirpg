@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniRpg", "MiniRpg\MiniRpg.csproj", "{AF8B3731-A56B-44B8-87C2-9A48155020F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniRpg.Core", "MiniRpg.Core\MiniRpg.Core.csproj", "{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniRpg.Tests", "MiniRpg.Tests\MiniRpg.Tests.csproj", "{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}.Debug|x86.Build.0 = Debug|Any CPU
+		{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}.Release|x86.ActiveCfg = Release|Any CPU
+		{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}.Release|x86.Build.0 = Release|Any CPU
+		{AF8B3731-A56B-44B8-87C2-9A48155020F2}.Debug|x86.ActiveCfg = Debug|x86
+		{AF8B3731-A56B-44B8-87C2-9A48155020F2}.Debug|x86.Build.0 = Debug|x86
+		{AF8B3731-A56B-44B8-87C2-9A48155020F2}.Release|x86.ActiveCfg = Release|x86
+		{AF8B3731-A56B-44B8-87C2-9A48155020F2}.Release|x86.Build.0 = Release|x86
+		{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}.Debug|x86.Build.0 = Debug|Any CPU
+		{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
