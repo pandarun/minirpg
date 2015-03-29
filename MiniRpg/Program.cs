@@ -1,12 +1,22 @@
 ﻿using System;
+using MiniRpg.Core;
 
 namespace MiniRpg
 {
-	class Game
+	class Pogram
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+
+			var game = new GameBuilder ()
+				.WithConsoleInput()
+				.WithAppConfigSettings()
+				.Build();
+
+			game.Run ();
+
+			Console.WriteLine ("Press Enter to Exit");
+			Console.ReadKey ();			
 		}
 	}
 }

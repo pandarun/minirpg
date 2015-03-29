@@ -29,17 +29,37 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="ISettigsProvider.cs" />
-    <Compile Include="ISettings.cs" />
-    <Compile Include="IGame.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="IWeapon.cs" />
-    <Compile Include="IEquipment.cs" />
-    <Compile Include="IGameCommand.cs" />
+    <Compile Include="IFaces\IEquipment.cs" />
+    <Compile Include="IFaces\IGame.cs" />
+    <Compile Include="IFaces\IGameCommand.cs" />
+    <Compile Include="IFaces\ISettigsProvider.cs" />
+    <Compile Include="IFaces\ISettings.cs" />
+    <Compile Include="IFaces\IState.cs" />
+    <Compile Include="IFaces\IWeapon.cs" />
+    <Compile Include="Impl\Commands\AskForHelp.cs" />
+    <Compile Include="Impl\Commands\AttackCommand.cs" />
+    <Compile Include="Impl\Commands\BuyClothesCommand.cs" />
+    <Compile Include="Impl\Commands\BuyWeaponCommand.cs" />
+    <Compile Include="Impl\ConsoleGameInputController.cs" />
+    <Compile Include="Impl\Game.cs" />
+    <Compile Include="Impl\GameBuilder.cs" />
+    <Compile Include="Impl\Settings.cs" />
+    <Compile Include="Impl\Commands\HealCommand.cs" />
+    <Compile Include="Impl\UserInput.cs" />
+    <Compile Include="Impl\Commands\NullCommand.cs" />
+    <Compile Include="Impl\AppConfigSettingsProvider.cs" />
+    <Compile Include="Impl\Commands\GameSettingsSection.cs" />
+    <Compile Include="Impl\Commands\InventoryItemCollection.cs" />
+    <Compile Include="Impl\Commands\InventoryItemConfigElement.cs" />
+    <Compile Include="StateBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="IFaces\" />
+    <Folder Include="Impl\" />
+  </ItemGroup>
 </Project>

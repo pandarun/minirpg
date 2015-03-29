@@ -1,17 +1,23 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MiniRpg.Core
 {
 
 	public class Settings : ISettings {
 
-		public Settings (int health, int money, int power)
+		public Settings (int health, int money, int power) 
+			: this(health, money, power, health, Enumerable.Empty<IEquipment>())
+		{
+		}
+
+		public Settings (int health, int money, int power, int maxHealth, IEnumerable<IEquipment> equipments)
 		{
 			this.Health = health;
 			this.Money = money;
 			this.Power = power;
-			this.MaxHealth = Health;
-			this.Equipments = new List<IEquipment> (){ };
+			this.MaxHealth = maxHealth;
+			this.Equipments = equipments;
 		}
 
 		#region ISettings implementation
@@ -33,7 +39,7 @@ namespace MiniRpg.Core
 			private set;
 		}
 
-		public System.Collections.Generic.IList<IEquipment> Equipments {
+		public System.Collections.Generic.IEnumerable<IEquipment> Equipments {
 			get;
 			private set;
 		}

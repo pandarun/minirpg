@@ -37,4 +37,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\MiniRpg.Core\MiniRpg.Core.csproj">
+      <Project>{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}</Project>
+      <Name>MiniRpg.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniRpg.Tests\MiniRpg.Tests.csproj">
+      <Project>{19B6CB7A-F4BA-4908-8B7C-155FF6F0A6AC}</Project>
+      <Name>MiniRpg.Tests</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
 </Project>

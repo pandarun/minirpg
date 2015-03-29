@@ -18,7 +18,7 @@ namespace MiniRpg.Tests
 			var gameController = Substitute.For<IGameInputController> ();
 
 			settingsProvider.Provide ().Returns (Mother.InMemorySettings);
-			gameController.Read (Arg.Any<string>()).Returns (Mother.HealCommand);
+			gameController.Read ().Returns (Mother.HealCommand);
 			this.gameUnderTest = new Game (settingsProvider, gameController);
 		}
 
@@ -36,7 +36,9 @@ namespace MiniRpg.Tests
 		[Test]	
 		public void Game_CanAcceptUserInput(string input) {
 
-			this.gameUnderTest.Accept (input);
+			var command = this.gameUnderTest.Accept ();
+			command.Execute (gameUnderTest.State);
+
 		}
 
 

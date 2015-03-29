@@ -2,7 +2,7 @@ namespace MiniRpg.Core
 {
 	public interface IGameCommand
 	{
-		void Execute();
+		IState Execute(IState current);
 	}
 
 

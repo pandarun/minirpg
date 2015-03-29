@@ -6,7 +6,7 @@
 	}
 
 	public interface IGameInputController {
-		IGameCommand Read(string input);
+		IGameCommand Read();
 	}
 }
 

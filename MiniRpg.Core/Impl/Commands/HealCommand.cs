@@ -6,9 +6,9 @@ namespace MiniRpg.Tests
 	public class HealCommand : IGameCommand
 	{
 		#region IGameCommand implementation
-		public void Execute ()
+		public IState Execute (IState cur)
 		{
-			throw new System.NotImplementedException ();
+			return cur.Heal ();
 		}
 		#endregion
 	}

@@ -7,7 +7,7 @@ namespace MiniRpg.Core
 		int Money { get; }
 		int Power { get; }
 		int MaxHealth { get; }
-		IList<IEquipment> Equipments {get;}
+		IEnumerable<IEquipment> Equipments {get;}
 	}
 
 }
