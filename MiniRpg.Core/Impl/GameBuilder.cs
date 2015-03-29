@@ -6,6 +6,7 @@ namespace MiniRpg
 	{
 		private ISettingsProvider settingsProvider;
 		private IGameInputController inputController;
+		private IGameOputputController gameOutputController;
 
 		public GameBuilder WithAppConfigSettings(){
 
@@ -18,8 +19,13 @@ namespace MiniRpg
 			return this;
 		}
 
+		public GameBuilder WithConsoleOuput(){
+			this.gameOutputController = new ConsoleGameOutputController();
+			return this;
+		}
+
 		public Game Build(){
-			return new Game (this.settingsProvider, this.inputController);
+			return new Game (this.settingsProvider, this.inputController, this.gameOutputController);
 		}
 	}
 

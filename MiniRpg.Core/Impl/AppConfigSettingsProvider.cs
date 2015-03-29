@@ -11,7 +11,7 @@ namespace MiniRpg
 
 			GameSettingsSection config =
 				(GameSettingsSection)System.Configuration.ConfigurationManager.GetSection(
-					"miniRpgSettingsSectionGroup/pageAppearance");
+					"miniRpgSettingsSectionGroup/gameSettings");
 
 			return new Settings(config.Health, config.Money, config.Power);
 

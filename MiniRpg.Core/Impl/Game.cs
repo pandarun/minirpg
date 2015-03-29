@@ -1,21 +1,39 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 
 namespace MiniRpg.Core
 {
 	public class Game : IGame
 	{
-		ISettingsProvider settingsProvider;
+		ISettingsProvider _settingsProvider;
 
-		IGameInputController inputContoller;
+		IGameInputController _inputContoller;
 
-		public Game (ISettingsProvider settings, IGameInputController inputContoller)
-		{
-			this.inputContoller = inputContoller;
-			this.settingsProvider = settings;
-			this.States = new List<IState> () {};
+		IGameOputputController _outputController;
+
+		public bool IsInitialized {
+			get;
+			private set;
 		}
+
+		public Game (ISettingsProvider settings, IGameInputController inputContoller, IGameOputputController outputController)
+		{
+			this._inputContoller = inputContoller;
+			this._settingsProvider = settings;
+			this._outputController = outputController;
+			this.States = new List<IState> (){};
+		}
+
+		public void Init() {
+			if (IsInitialized) return;
+			var settings = _settingsProvider.Provide ();
+			var defaultState = new StateBase (settings.Health, settings.MaxHealth, settings.Power, settings.Money);
+			this.States.Add(defaultState);
+			IsInitialized = true;
+		}
+
 
 		#region IGame implementation
 
@@ -36,10 +54,13 @@ namespace MiniRpg.Core
 
 		public void Run ()
 		{
-			while (!HasEnded) {
+			
+			while (!HasEnded) {		
+				Render (Messages.AskForInput);
 				var command = Accept ();
 				var newState = command.Execute (State);
 				States.Add (newState);
+				Render ();
 			}
 
 		}
@@ -48,11 +69,22 @@ namespace MiniRpg.Core
 
 		public ISettings ReadSettings ()
 		{
-			return this.settingsProvider.Provide ();
+			return this._settingsProvider.Provide ();
 		}
 
 		public IGameCommand Accept() {
-			return this.inputContoller.Read ();
+			return this._inputContoller.Read ();
+		}
+
+		void Render ()
+		{
+			var message = State != null ? State.ToString() : string.Empty;
+			_outputController.Write(message);
+		}
+
+		void Render(string message)
+		{
+			_outputController.Write (message);
 		}
 	}
 

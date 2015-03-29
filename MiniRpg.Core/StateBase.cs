@@ -17,7 +17,7 @@ public class StateBase : IState {
 	{
 		var winProbability = Math.Min (0.4 + Power * 0.05, 0.7);
 		var random = new Random ();
-		var result = (random.Next(0, 100) < winProbability);
+		var result = (random.NextDouble() < winProbability);
 
 
 		return result 
@@ -76,6 +76,11 @@ public class StateBase : IState {
 			return this.Health <= 0;
 		}
 
+	}
+
+	public override string ToString ()
+	{
+		return string.Format ("[StateBase: Health={0}, Power={1}, MaxHealth={2}, Money={3}, Equipment={4}, IsTerminal={5}]", Health, Power, MaxHealth, Money, Equipment, IsTerminal);
 	}
 
 	#endregion

@@ -9,10 +9,12 @@ namespace MiniRpg
 		{
 
 			var game = new GameBuilder ()
-				.WithConsoleInput()
-				.WithAppConfigSettings()
+				.WithConsoleInput ()
+				.WithAppConfigSettings ()
+				.WithConsoleOuput ()
 				.Build();
 
+			game.Init ();
 			game.Run ();
 
 			Console.WriteLine ("Press Enter to Exit");

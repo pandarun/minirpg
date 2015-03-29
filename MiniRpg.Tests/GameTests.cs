@@ -16,10 +16,13 @@ namespace MiniRpg.Tests
 		public void SetUp() {
 			var settingsProvider = Substitute.For<ISettingsProvider> ();
 			var gameController = Substitute.For<IGameInputController> ();
+			var outputControoler = Substitute.For<IGameOputputController> ();
 
 			settingsProvider.Provide ().Returns (Mother.InMemorySettings);
 			gameController.Read ().Returns (Mother.HealCommand);
-			this.gameUnderTest = new Game (settingsProvider, gameController);
+
+
+			this.gameUnderTest = new Game (settingsProvider, gameController, outputControoler);
 		}
 
 		[Test]
