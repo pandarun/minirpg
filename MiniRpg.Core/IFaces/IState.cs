@@ -8,7 +8,7 @@ namespace MiniRpg.Core
 		int Power {get; }
 		int MaxHealth { get; }
 		int Money { get; }
-		IList<IEquipment> Equipment {get;}
+		IEnumerable<IEquipment> Equipment {get;}
 		bool IsTerminal  {get;}
 
 		IState Fight();

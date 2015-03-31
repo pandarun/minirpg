@@ -52,16 +52,29 @@
     <Compile Include="Impl\UserInput.cs" />
     <Compile Include="Impl\Commands\NullCommand.cs" />
     <Compile Include="Impl\AppConfigSettingsProvider.cs" />
-    <Compile Include="Impl\Commands\GameSettingsSection.cs" />
-    <Compile Include="Impl\Commands\InventoryItemCollection.cs" />
-    <Compile Include="Impl\Commands\InventoryItemConfigElement.cs" />
     <Compile Include="StateBase.cs" />
     <Compile Include="Impl\ConsoleGameOutputController.cs" />
     <Compile Include="Impl\Messages.cs" />
+    <Compile Include="Impl\PlayerSettings.cs" />
+    <Compile Include="Impl\FightSettings.cs" />
+    <Compile Include="Impl\ShopSettings.cs" />
+    <Compile Include="Impl\HealerSettings.cs" />
+    <Compile Include="Impl\ConfigElements\ShopElement.cs" />
+    <Compile Include="Impl\ConfigElements\WeaponElement.cs" />
+    <Compile Include="Impl\ConfigElements\WinChanceElement.cs" />
+    <Compile Include="Impl\ConfigElements\WinElement.cs" />
+    <Compile Include="Impl\ConfigElements\InventoryItemCollection.cs" />
+    <Compile Include="Impl\ConfigElements\InventoryItemConfigElement.cs" />
+    <Compile Include="Impl\ConfigElements\ClothesElement.cs" />
+    <Compile Include="Impl\ConfigElements\FightElement.cs" />
+    <Compile Include="Impl\ConfigElements\GameSettingsSection.cs" />
+    <Compile Include="Impl\ConfigElements\HealerElement.cs" />
+    <Compile Include="Impl\ConfigElements\LooseElement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="IFaces\" />
     <Folder Include="Impl\" />
+    <Folder Include="Impl\ConfigElements\" />
   </ItemGroup>
 </Project>

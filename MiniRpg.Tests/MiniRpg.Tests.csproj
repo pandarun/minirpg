@@ -47,17 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GameTests.cs" />
-    <Compile Include="Mother.cs" />
+    <Compile Include="Integration\GameTests.cs" />
+    <Compile Include="Helpes\Mother.cs" />
+    <Compile Include="TestableState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MiniRpg.Core\MiniRpg.Core.csproj">
       <Project>{DDE3D7C0-5A30-4732-BCD5-13DCAA18A185}</Project>
       <Name>MiniRpg.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Unit\" />
+    <Folder Include="Integration\" />
+    <Folder Include="Helpes\" />
   </ItemGroup>
 </Project>

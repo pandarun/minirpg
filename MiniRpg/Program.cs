@@ -18,6 +18,7 @@ namespace MiniRpg
 			game.Run ();
 
 			Console.WriteLine ("Press Enter to Exit");
+
 			Console.ReadKey ();			
 		}
 	}

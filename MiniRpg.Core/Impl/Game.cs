@@ -7,6 +7,11 @@ namespace MiniRpg.Core
 {
 	public class Game : IGame
 	{
+		public static ISettings Settings {
+			get;
+			private set;
+		}
+
 		ISettingsProvider _settingsProvider;
 
 		IGameInputController _inputContoller;
@@ -26,12 +31,19 @@ namespace MiniRpg.Core
 			this.States = new List<IState> (){};
 		}
 
+
+
 		public void Init() {
-			if (IsInitialized) return;
-			var settings = _settingsProvider.Provide ();
-			var defaultState = new StateBase (settings.Health, settings.MaxHealth, settings.Power, settings.Money);
+
+			this.States.Clear();
+
+			if (Game.Settings == null) {
+				Game.Settings = _settingsProvider.Provide ();
+			}
+
+			var defaultState = new StateBase (Game.Settings.Health, Game.Settings.MaxHealth, Game.Settings.Power, Game.Settings.Money);
 			this.States.Add(defaultState);
-			IsInitialized = true;
+
 		}
 
 

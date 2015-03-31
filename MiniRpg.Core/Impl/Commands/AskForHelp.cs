@@ -7,6 +7,7 @@ namespace MiniRpg
 	public class AskForHelp : IGameCommand
 	{
 		#region IGameCommand implementation
+
 		public IState Execute (IState cur)
 		{
 			return cur;

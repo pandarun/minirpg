@@ -13,7 +13,13 @@ namespace MiniRpg
 				(GameSettingsSection)System.Configuration.ConfigurationManager.GetSection(
 					"miniRpgSettingsSectionGroup/gameSettings");
 
-			return new Settings(config.Health, config.Money, config.Power);
+			var playerSettings = new PlayerSettings (config.Health, config.Money, config.Power, config.MaxHealth);
+
+			var fightSettings = new FightSettings (config.FightSettings);
+			var shopSettins = new ShopSettings (config.ShopSettings);
+			var healSettings = new HealerSettings (config.HealerSettings);
+
+			return new Settings(playerSettings, fightSettings, shopSettins, healSettings);
 
 		}
 		#endregion

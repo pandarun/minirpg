@@ -6,6 +6,32 @@ namespace MiniRpg.Core
 
 	public class Settings : ISettings {
 
+		public Settings(PlayerSettings playerSettings, FightSettings fightSettings, ShopSettings shopSettings, HealerSettings healSettings) 
+			: this(playerSettings.Health, playerSettings.Money, playerSettings.MaxHealth){
+
+			this.WeaponPrice = shopSettings.WeaponPrice;
+			this.WeaponPrice = shopSettings.WeaponPowerUpFom;
+			this.WeaponPrice = shopSettings.WeaponPopwerUpTo;
+
+			this.ClothesPrice = shopSettings.ClothesPrice;
+			this.ClothesMaxHealthUpFrom = shopSettings.ClothesMaxHealthUpFrom;
+			this.ClothesMaxHealthUpTo = shopSettings.ClothesMaxHealthUpTo;
+
+			this.BaseChance = fightSettings.BaseChance;
+			this.MaxChance 	= fightSettings.MaxChance;
+			this.PowerScale = fightSettings.PowerScale;
+
+			this.HealthPenalty = fightSettings.HealthPenalty;
+			this.HealthPenltyScale = fightSettings.HealthPenltyScale;
+			this.MoneyUp = fightSettings.MoneyUp;
+			this.PowerScale = fightSettings.PowerScale;
+
+			this.HealPrice 	= healSettings.HealPrice;
+			this.Healup 	= healSettings.Healup;
+
+
+		} 
+
 		public Settings (int health, int money, int power) 
 			: this(health, money, power, health, Enumerable.Empty<IEquipment>())
 		{
@@ -39,7 +65,67 @@ namespace MiniRpg.Core
 			private set;
 		}
 
-		public System.Collections.Generic.IEnumerable<IEquipment> Equipments {
+		public int WeaponPrice {
+			get;
+			private set;
+		}
+
+		public IEnumerable<IEquipment> Equipments {
+			get;
+			private set;
+		}
+
+		public int ClothesPrice {
+			get;
+			private set;
+		}
+
+		public int ClothesMaxHealthUpFrom {
+			get;
+			private set;
+		}
+
+		public int ClothesMaxHealthUpTo {
+			get;
+			private set;
+		}
+
+		public double BaseChance {
+			get;
+			private set;
+		}
+
+		public double MaxChance {
+			get;
+			private set;
+		}
+
+		public double PowerScale {
+			get;
+			private set;
+		}
+
+		public int HealthPenalty {
+			get;
+			private set;
+		}
+
+		public double HealthPenltyScale {
+			get;
+			private set;
+		}
+
+		public int MoneyUp {
+			get;
+			private set;
+		}
+
+		public int HealPrice {
+			get;
+			private set;
+		}
+
+		public int Healup {
 			get;
 			private set;
 		}
