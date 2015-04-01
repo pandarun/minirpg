@@ -1,14 +1,13 @@
-using MiniRpg.Core;
-using System.Configuration;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class HealerSettings
+    using MiniRpg.Core.Impl.ConfigElements;
+
+    public class HealerSettings
 	{
 		public HealerSettings (HealerElement healerSettings)
 		{
-			HealPrice = healerSettings.HealPrice;
-			Healup = healerSettings.HealUp;
+			this.HealPrice = healerSettings.HealPrice;
+			this.Healup = healerSettings.HealUp;
 		}
 
 		public int HealPrice {

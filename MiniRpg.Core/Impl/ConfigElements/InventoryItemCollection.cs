@@ -1,10 +1,9 @@
-using System;
-using System.Configuration;
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
+    using System;
+    using System.Configuration;
 
-	public class InventoryItemCollection : ConfigurationElementCollection
+    public class InventoryItemCollection : ConfigurationElementCollection
 	{
 		public InventoryItemCollection()
 		{
@@ -12,9 +11,9 @@ namespace MiniRpg.Core
 			// not necessary; could leave the collection  
 			// empty until items are added to it outside 
 			// the constructor.
-			InventoryItemConfigElement item = 
-				(InventoryItemConfigElement)CreateNewElement();
-			Add(item);
+			var item = 
+				(InventoryItemConfigElement)this.CreateNewElement();
+			this.Add(item);
 		}
 
 		public override ConfigurationElementCollectionType CollectionType
@@ -77,15 +76,15 @@ namespace MiniRpg.Core
 		{
 			get
 			{
-				return (InventoryItemConfigElement)BaseGet(index);
+				return (InventoryItemConfigElement)this.BaseGet(index);
 			}
 			set
 			{
-				if (BaseGet(index) != null)
+				if (this.BaseGet(index) != null)
 				{
-					BaseRemoveAt(index);
+					this.BaseRemoveAt(index);
 				}
-				BaseAdd(index, value);
+				this.BaseAdd(index, value);
 			}
 		}
 
@@ -93,46 +92,46 @@ namespace MiniRpg.Core
 		{
 			get
 			{
-				return (InventoryItemConfigElement)BaseGet(Name);
+				return (InventoryItemConfigElement)this.BaseGet(Name);
 			}
 		}
 
 		public int IndexOf(InventoryItemConfigElement item)
 		{
-			return BaseIndexOf(item);
+			return this.BaseIndexOf(item);
 		}
 
 		public void Add(InventoryItemConfigElement item)
 		{
-			BaseAdd(item);
+			this.BaseAdd(item);
 			// Add custom code here.
 		}
 
 		protected override void BaseAdd(ConfigurationElement element)
 		{
-			BaseAdd(element, false);
+			this.BaseAdd(element, false);
 			// Add custom code here.
 		}
 
 		public void Remove(InventoryItemConfigElement item)
 		{
-			if (BaseIndexOf(item) >= 0)
-				BaseRemove(item.Name);
+			if (this.BaseIndexOf(item) >= 0)
+				this.BaseRemove(item.Name);
 		}
 
 		public void RemoveAt(int index)
 		{
-			BaseRemoveAt(index);
+			this.BaseRemoveAt(index);
 		}
 
 		public void Remove(string name)
 		{
-			BaseRemove(name);
+			this.BaseRemove(name);
 		}
 
 		public void Clear()
 		{
-			BaseClear();
+			this.BaseClear();
 			// Add custom code here.
 		}
 	}

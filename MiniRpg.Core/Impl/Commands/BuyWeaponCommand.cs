@@ -1,9 +1,8 @@
-using System;
-using MiniRpg.Core;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl.Commands
 {
-	public class BuyWeaponCommand : IGameCommand
+    using MiniRpg.Core.IFaces;
+
+    public class BuyWeaponCommand : IGameCommand
 	{
 		#region IGameCommand implementation
 		public IState Execute (IState cur)

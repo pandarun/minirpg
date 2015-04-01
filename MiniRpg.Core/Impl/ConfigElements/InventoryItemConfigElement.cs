@@ -1,10 +1,9 @@
-using System;
-using System.Configuration;
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
+    using System;
+    using System.Configuration;
 
-	public class InventoryItemConfigElement : ConfigurationElement
+    public class InventoryItemConfigElement : ConfigurationElement
 	{
 		public InventoryItemConfigElement()
 		{
@@ -12,7 +11,7 @@ namespace MiniRpg.Core
 
 		public InventoryItemConfigElement(string elementName)
 		{
-			Name = elementName;
+			this.Name = elementName;
 		}
 
 		[ConfigurationProperty("name", 

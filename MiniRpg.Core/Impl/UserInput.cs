@@ -1,8 +1,8 @@
-using System.Configuration;
-
-namespace MiniRpg.Tests
+namespace MiniRpg.Core.Impl
 {
-	public static class UserInput 
+    using System.Configuration;
+
+    public static class UserInput 
 	{
 		public static string Heal = ConfigurationManager.AppSettings["HealKey"];
 		public static string Attack = ConfigurationManager.AppSettings["AttackKey"];

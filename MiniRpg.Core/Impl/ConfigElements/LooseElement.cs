@@ -1,10 +1,8 @@
-using System;
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class LooseElement : ConfigurationElement
+    using System.Configuration;
+
+    public class LooseElement : ConfigurationElement
 	{
 		[ConfigurationProperty("healthPenalty", DefaultValue = "40", IsRequired = true)]
 		[IntegerValidator(ExcludeRange = false, MaxValue = int.MaxValue, MinValue = 0)]

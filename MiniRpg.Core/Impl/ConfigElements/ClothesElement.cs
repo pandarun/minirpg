@@ -1,9 +1,8 @@
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class ClothesElement : ConfigurationElement
+    using System.Configuration;
+
+    public class ClothesElement : ConfigurationElement
 	{
 
 		[ConfigurationProperty("clothesPrice", DefaultValue = "0", IsRequired = true)]

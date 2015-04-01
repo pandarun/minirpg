@@ -1,9 +1,8 @@
-using System;
-using MiniRpg.Core;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl.Commands
 {
-	public class BuyClothesCommand : IGameCommand
+    using MiniRpg.Core.IFaces;
+
+    public class BuyClothesCommand : IGameCommand
 	{
 		#region IGameCommand implementation
 		public IState Execute (IState cur)

@@ -1,8 +1,8 @@
-using MiniRpg.Core;
-
-namespace MiniRpg.Tests
+namespace MiniRpg.Tests.Helpes
 {
-	public static class Mother
+    using MiniRpg.Core.IFaces;
+
+    public static class Mother
 	{
 		public static IGameCommand HealCommand {
 			get { 

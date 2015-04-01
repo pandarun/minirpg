@@ -1,10 +1,8 @@
-using System;
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class WinChanceElement : ConfigurationElement
+    using System.Configuration;
+
+    public class WinChanceElement : ConfigurationElement
 	{
 
 		[ConfigurationProperty("baseChance", DefaultValue = "0.4", IsRequired = true)]

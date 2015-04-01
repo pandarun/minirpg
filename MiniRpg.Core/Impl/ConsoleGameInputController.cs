@@ -1,10 +1,12 @@
-using System;
-using MiniRpg.Core;
-using MiniRpg.Tests;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class ConsoleGameInputController : IGameInputController
+    using System;
+
+    using MiniRpg.Core.IFaces;
+    using MiniRpg.Core.Impl.Commands;
+    using MiniRpg.Tests;
+
+    public class ConsoleGameInputController : IGameInputController
 	{
 		#region IGameInputController implementation
 		public IGameCommand Read ()

@@ -1,8 +1,9 @@
-using MiniRpg.Core;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class GameBuilder
+    using MiniRpg.Core;
+    using MiniRpg.Core.IFaces;
+
+    public class GameBuilder
 	{
 		private ISettingsProvider settingsProvider;
 		private IGameInputController inputController;

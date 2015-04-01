@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-
-
-namespace MiniRpg.Core
+﻿namespace MiniRpg.Core.Impl
 {
-	public class Game : IGame
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using MiniRpg.Core.IFaces;
+
+    public class Game : IGame
 	{
 		public static ISettings Settings {
 			get;
@@ -39,11 +39,11 @@ namespace MiniRpg.Core
 
 			this.States.Clear();
 
-		    lock (syncObj)
+		    lock (this.syncObj)
 		    {
                 if (Game.Settings == null)
                 {
-                    Game.Settings = _settingsProvider.Provide();
+                    Game.Settings = this._settingsProvider.Provide();
                 }    
 		    }
 
@@ -59,13 +59,13 @@ namespace MiniRpg.Core
 
 		public IState State {
 			get {
-				return States.LastOrDefault();
+				return this.States.LastOrDefault();
 			}
 		}
 
 		bool HasEnded {
 			get {
-				return State != null && State.IsTerminal;
+				return this.State != null && this.State.IsTerminal;
 			}
 
 		}
@@ -73,14 +73,14 @@ namespace MiniRpg.Core
 		public void Run ()
 		{
 			
-			while (!HasEnded) {		
-				Render (Messages.AskForInput);
-				var command = Accept ();
-				var newState = command.Execute (State);
-				States.Add (newState);
-				Render ();
+			while (!this.HasEnded) {		
+				this.Render (Messages.AskForInput);
+				var command = this.Accept ();
+				var newState = command.Execute (this.State);
+				this.States.Add (newState);
+				this.Render ();
 
-                if(State.IsTerminal)
+                if(this.State.IsTerminal)
                     this.Render(Messages.YouLoose);
 			}
 
@@ -99,13 +99,13 @@ namespace MiniRpg.Core
 
 		void Render ()
 		{
-			var message = State != null ? State.ToString() : string.Empty;
-			_outputController.Write(message);
+			var message = this.State != null ? this.State.ToString() : string.Empty;
+			this._outputController.Write(message);
 		}
 
 		void Render(string message)
 		{
-			_outputController.Write (message);
+			this._outputController.Write (message);
 		}
 	}
 

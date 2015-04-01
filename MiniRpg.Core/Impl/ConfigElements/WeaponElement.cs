@@ -1,9 +1,8 @@
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class WeaponElement : ConfigurationElement
+    using System.Configuration;
+
+    public class WeaponElement : ConfigurationElement
 	{
 
 		[ConfigurationProperty("weaponPrice", DefaultValue = "10", IsRequired = true)]

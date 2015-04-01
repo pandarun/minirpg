@@ -1,10 +1,8 @@
-using System;
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class FightElement : ConfigurationElement
+    using System.Configuration;
+
+    public class FightElement : ConfigurationElement
 	{
 		[ConfigurationProperty("winChance")]
 		public WinChanceElement WinChance

@@ -1,9 +1,10 @@
 using System;
-using MiniRpg.Core;
 
 namespace MiniRpg
 {
-	public class ConsoleGameOutputController : IGameOputputController
+    using MiniRpg.Core.IFaces;
+
+    public class ConsoleGameOutputController : IGameOputputController
 	{
 		#region IGameOputputController implementation
 		public void Write (string message)

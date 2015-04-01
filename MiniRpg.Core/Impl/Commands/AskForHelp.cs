@@ -1,10 +1,8 @@
-using System;
-using MiniRpg.Core;
-using MiniRpg.Tests;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl.Commands
 {
-	public class AskForHelp : IGameCommand
+    using MiniRpg.Core.IFaces;
+
+    public class AskForHelp : IGameCommand
 	{
 		#region IGameCommand implementation
 

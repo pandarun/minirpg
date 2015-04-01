@@ -1,19 +1,18 @@
-using MiniRpg.Core;
-using System.Configuration;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class ShopSettings
+    using MiniRpg.Core.Impl.ConfigElements;
+
+    public class ShopSettings
 	{
 
 		public ShopSettings (ShopElement shopSection)
 		{
-			WeaponPrice = shopSection.Weapon.WeaponPrice;
+			this.WeaponPrice = shopSection.Weapon.WeaponPrice;
 			this.WeaponPowerUpFrom = shopSection.Weapon.PowerUpFrom;
-			WeaponPopwerUpTo = shopSection.Weapon.PowerUpTo;
-			ClothesPrice = shopSection.Clothes.ClothesPrice;
-			ClothesMaxHealthUpFrom = shopSection.Clothes.MaxHealthUpFrom;
-			ClothesMaxHealthUpTo = shopSection.Clothes.MaxHealthUpTo;
+			this.WeaponPopwerUpTo = shopSection.Weapon.PowerUpTo;
+			this.ClothesPrice = shopSection.Clothes.ClothesPrice;
+			this.ClothesMaxHealthUpFrom = shopSection.Clothes.MaxHealthUpFrom;
+			this.ClothesMaxHealthUpTo = shopSection.Clothes.MaxHealthUpTo;
 		}	
 
 		public int WeaponPrice {

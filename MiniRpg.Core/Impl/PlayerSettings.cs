@@ -1,5 +1,5 @@
 
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl
 {
 
 	public class PlayerSettings

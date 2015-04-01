@@ -1,6 +1,6 @@
-namespace MiniRpg.Core
+namespace MiniRpg.Core.IFaces
 {
-	interface IWeapon : IEquipment
+    interface IWeapon : IEquipment
 	{
 
 	}

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace MiniRpg.Core
 {
+    using MiniRpg.Core.IFaces;
+    using MiniRpg.Core.Impl;
+
     public class StateBase : IState {
 
         public StateBase (int health, int maxHealth, int power, int money)

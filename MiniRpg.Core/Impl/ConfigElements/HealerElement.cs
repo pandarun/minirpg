@@ -1,9 +1,8 @@
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class HealerElement : ConfigurationElement
+    using System.Configuration;
+
+    public class HealerElement : ConfigurationElement
 	{
 		[ConfigurationProperty("healPrice", DefaultValue = "10", IsRequired = true)]
 		[IntegerValidator(ExcludeRange = false, MaxValue = int.MaxValue, MinValue = 0)]

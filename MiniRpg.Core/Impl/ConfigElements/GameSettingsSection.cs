@@ -1,10 +1,8 @@
-﻿using System;
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+﻿namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class GameSettingsSection : ConfigurationSection
+    using System.Configuration;
+
+    public class GameSettingsSection : ConfigurationSection
 	{
 		[ConfigurationProperty("health", DefaultValue = "100", IsRequired = true)]
 		[IntegerValidator(ExcludeRange = false, MaxValue = int.MaxValue, MinValue = 0)]

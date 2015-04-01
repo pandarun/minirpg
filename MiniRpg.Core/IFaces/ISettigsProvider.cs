@@ -1,6 +1,6 @@
-﻿namespace MiniRpg.Core
+﻿namespace MiniRpg.Core.IFaces
 {
-	public interface ISettingsProvider
+    public interface ISettingsProvider
 	{
 		ISettings Provide();
 	}

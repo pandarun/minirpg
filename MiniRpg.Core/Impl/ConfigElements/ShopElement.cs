@@ -1,9 +1,8 @@
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class ShopElement : ConfigurationElement
+    using System.Configuration;
+
+    public class ShopElement : ConfigurationElement
 	{
 
 		[ConfigurationProperty("weapon")]

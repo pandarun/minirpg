@@ -1,9 +1,8 @@
-﻿using System;
-using MiniRpg.Core;
-
-namespace MiniRpg
+﻿namespace MiniRpg
 {
-	class Pogram
+    using MiniRpg.Core.Impl;
+
+    class Pogram
 	{
 		public static void Main (string[] args)
 		{

@@ -1,15 +1,16 @@
-using MiniRpg.Core;
-using System.Configuration;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class AppConfigSettingsProvider : ISettingsProvider
+    using MiniRpg.Core;
+    using MiniRpg.Core.IFaces;
+    using MiniRpg.Core.Impl.ConfigElements;
+
+    public class AppConfigSettingsProvider : ISettingsProvider
 	{
 		#region ISettingsProvider implementation
 		public ISettings Provide ()
 		{
 
-			GameSettingsSection config =
+			var config =
 				(GameSettingsSection)System.Configuration.ConfigurationManager.GetSection(
 					"miniRpgSettingsSectionGroup/gameSettings");
 

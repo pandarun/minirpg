@@ -1,16 +1,17 @@
-using MiniRpg.Core;
-namespace MiniRpg
+namespace MiniRpg.Core.Impl
 {
-	public class FightSettings
+    using MiniRpg.Core.Impl.ConfigElements;
+
+    public class FightSettings
 	{
 		public FightSettings (FightElement fightSection)
 		{
-			BaseChance = fightSection.WinChance.BaseChance;
-			MaxChance = fightSection.WinChance.MaxChance;
-			PowerScale = fightSection.WinChance.PowerScale;
-			HealthPenltyScale = fightSection.Win.HealthPenaltyScale;
-			MoneyUp = fightSection.Win.MoneyUp;
-			HealthPenalty = fightSection.Loose.HealthPenalty;
+			this.BaseChance = fightSection.WinChance.BaseChance;
+			this.MaxChance = fightSection.WinChance.MaxChance;
+			this.PowerScale = fightSection.WinChance.PowerScale;
+			this.HealthPenltyScale = fightSection.Win.HealthPenaltyScale;
+			this.MoneyUp = fightSection.Win.MoneyUp;
+			this.HealthPenalty = fightSection.Loose.HealthPenalty;
 		}
 
 		public double BaseChance {

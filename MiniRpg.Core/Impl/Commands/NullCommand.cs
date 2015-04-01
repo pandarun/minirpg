@@ -1,10 +1,9 @@
-using MiniRpg.Core;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl.Commands
 {
-	class NullCommand : IGameCommand
-	{
+    using MiniRpg.Core.IFaces;
 
+    class NullCommand : IGameCommand
+	{
 
 		public IState Execute (IState current)
 		{

@@ -1,10 +1,11 @@
-using System.Collections.Generic;
-using System.Linq;
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl
 {
+    using System.Collections.Generic;
+    using System.Linq;
 
-	public class Settings : ISettings {
+    using MiniRpg.Core.IFaces;
+
+    public class Settings : ISettings {
 
 		public Settings(PlayerSettings playerSettings, FightSettings fightSettings, ShopSettings shopSettings, HealerSettings healSettings) 
 			: this(playerSettings.Health, playerSettings.MaxHealth, playerSettings.Money, playerSettings.Power){

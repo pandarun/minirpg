@@ -1,7 +1,8 @@
-using System.Collections.Generic;
-namespace MiniRpg.Core
+namespace MiniRpg.Core.IFaces
 {
-	public interface ISettings
+    using System.Collections.Generic;
+
+    public interface ISettings
 	{
 		int Health { get;}
 		int Money { get; }

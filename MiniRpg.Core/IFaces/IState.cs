@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.IFaces
 {
-	public interface IState
+    using System.Collections.Generic;
+
+    public interface IState
 	{
 		int Health { get; }
 		int Power {get; }

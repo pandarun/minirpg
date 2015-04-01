@@ -1,11 +1,12 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using MiniRpg.Core;
 using NUnit.Framework;
 
 namespace MiniRpg.Tests.Integration
 {
-	[TestFixture]
+    using MiniRpg.Core.Impl;
+
+    [TestFixture]
 	public class GameTests
 	{
 		private Game gameUnderTest;
@@ -44,7 +45,7 @@ namespace MiniRpg.Tests.Integration
 		public void CanWinFight()
 		{
 			var init = this.gameUnderTest.State;
-			var expectedHealth = Game.Settings.HealthPenltyScale * init.Health;
+			var expectedHealth = (1 - Game.Settings.HealthPenltyScale) * init.Health;
 			var expectedMoney = init.Money + Game.Settings.MoneyUp;
 			var current = new TestableState (true, init.Health, init.MaxHealth, init.Power, init.Money);
 			this.gameUnderTest.States.Add(current);

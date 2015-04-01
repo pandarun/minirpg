@@ -1,6 +1,6 @@
 
 
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl
 {
 	public static class Messages
 	{

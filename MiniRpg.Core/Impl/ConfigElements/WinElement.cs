@@ -1,10 +1,8 @@
-using System;
-using System.Configuration;
-
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.Impl.ConfigElements
 {
-	public class WinElement : ConfigurationElement
+    using System.Configuration;
+
+    public class WinElement : ConfigurationElement
 	{
 		[ConfigurationProperty("healthPenaltyScale", DefaultValue = "0.1", IsRequired = true)]
 		public double HealthPenaltyScale

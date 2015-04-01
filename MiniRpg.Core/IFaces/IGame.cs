@@ -1,5 +1,4 @@
-
-namespace MiniRpg.Core
+namespace MiniRpg.Core.IFaces
 {
 	public interface IGame
 	{

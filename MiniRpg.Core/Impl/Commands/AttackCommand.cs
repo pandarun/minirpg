@@ -1,9 +1,8 @@
-using System;
-using MiniRpg.Core;
-
-namespace MiniRpg
+namespace MiniRpg.Core.Impl.Commands
 {
-	public class AttackCommand : IGameCommand
+    using MiniRpg.Core.IFaces;
+
+    public class AttackCommand : IGameCommand
 	{
 
 		#region IGameCommand implementation
