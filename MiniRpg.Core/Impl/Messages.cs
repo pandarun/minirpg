@@ -13,6 +13,10 @@ namespace MiniRpg.Core
 	D - подлечиться у лекаря
 ], 
 Пожалуйста, выберите одну из допустимых команд:";
+
+	    public const string YouLoose = @"
+Вы проиграли.
+";
 	}
 
 

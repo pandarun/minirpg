@@ -79,6 +79,9 @@ namespace MiniRpg.Core
 				var newState = command.Execute (State);
 				States.Add (newState);
 				Render ();
+
+                if(State.IsTerminal)
+                    this.Render(Messages.YouLoose);
 			}
 
 		}

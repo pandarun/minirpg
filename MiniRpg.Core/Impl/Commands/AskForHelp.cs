@@ -10,6 +10,7 @@ namespace MiniRpg
 
 		public IState Execute (IState cur)
 		{
+            // TODO : implement bot
 			return cur;
 		}
 		#endregion

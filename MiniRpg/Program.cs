@@ -14,12 +14,12 @@ namespace MiniRpg
 				.WithConsoleOuput ()
 				.Build();
 
-			game.Init ();
-			game.Run ();
-
-			Console.WriteLine ("Press Enter to Exit");
-
-			Console.ReadKey ();			
+		    while (true)
+		    {
+		        game.Init ();
+			    game.Run ();    
+		    }
+			
 		}
 	}
 }

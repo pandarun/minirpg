@@ -35,7 +35,7 @@ namespace MiniRpg.Core
             var result = this.CalcuateFightResult ();
 
             var healthMutator = result
-                ? (() => ((int)(Game.Settings.HealthPenltyScale * this.Health)))
+                ? (() => ((int)((1- Game.Settings.HealthPenltyScale) * this.Health)))
                 : new Func<int>(() => this.Health - Game.Settings.HealthPenalty);
 
             var moneyMutator = result 
