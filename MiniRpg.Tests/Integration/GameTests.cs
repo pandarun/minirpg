@@ -37,15 +37,15 @@ namespace MiniRpg.Tests.Integration
 
 			actual.Health.Should ().BeLessOrEqualTo (current.MaxHealth);
 			actual.Health.Should ().BeGreaterOrEqualTo (current.Health);
-			actual.Health.Should ().BeInRange (current.Health, current.Health + 10);
+			actual.Health.Should ().BeInRange (current.Health, current.Health + Game.Settings.HealUp);
 		}
 
 		[Test]
 		public void CanWinFight()
 		{
 			var init = this.gameUnderTest.State;
-			var expectedHealth = 0.9 * init.Health;
-			var expectedMoney = init.Money + 5;
+			var expectedHealth = Game.Settings.HealthPenltyScale * init.Health;
+			var expectedMoney = init.Money + Game.Settings.MoneyUp;
 			var current = new TestableState (true, init.Health, init.MaxHealth, init.Power, init.Money);
 			this.gameUnderTest.States.Add(current);
 
@@ -59,7 +59,7 @@ namespace MiniRpg.Tests.Integration
 		[Test]
 		public void CanLooseFight() {
 			var init = this.gameUnderTest.State;
-			var expecteHealth = init.Health - 40;
+			var expecteHealth = init.Health - Game.Settings.HealthPenalty;
 			var current = new TestableState (false, init.Health, init.MaxHealth, init.Power, init.Money);
 			this.gameUnderTest.States.Add(current);
 
@@ -74,7 +74,9 @@ namespace MiniRpg.Tests.Integration
 
 			var actual = this.gameUnderTest.State.BuyArmor ();
 
-			actual.MaxHealth.Should ().BeInRange (currentMaxHealth + 1, currentMaxHealth + 2);
+			actual.MaxHealth
+                .Should ()
+                .BeInRange (currentMaxHealth + Game.Settings.ClothesMaxHealthUpFrom, currentMaxHealth + Game.Settings.ClothesMaxHealthUpTo);
 
 		}
 
@@ -89,8 +91,8 @@ namespace MiniRpg.Tests.Integration
 
 			var actual = this.gameUnderTest.State.BuyWeapon ();
 
-			actual.Power.Should ().BeInRange (currentPower + 1, currentPower + 2);
-			actual.Money.Should ().Be (currentMoney - 10);
+			actual.Power.Should ().BeInRange (currentPower + Game.Settings.WeaponPowerUpFrom, currentPower + Game.Settings.WeaponPowerUpTo);
+			actual.Money.Should ().Be (currentMoney - Game.Settings.WeaponPrice);
 		}
 
 

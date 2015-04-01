@@ -31,15 +31,21 @@ namespace MiniRpg.Core
 			this.States = new List<IState> (){};
 		}
 
+	    private readonly object syncObj = new object();
+
 
 
 		public void Init() {
 
 			this.States.Clear();
 
-			if (Game.Settings == null) {
-				Game.Settings = _settingsProvider.Provide ();
-			}
+		    lock (syncObj)
+		    {
+                if (Game.Settings == null)
+                {
+                    Game.Settings = _settingsProvider.Provide();
+                }    
+		    }
 
 			var defaultState = new StateBase (Game.Settings.Health, Game.Settings.MaxHealth, Game.Settings.Power, Game.Settings.Money);
 			this.States.Add(defaultState);

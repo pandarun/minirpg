@@ -10,8 +10,8 @@ namespace MiniRpg.Core
 			: this(playerSettings.Health, playerSettings.Money, playerSettings.MaxHealth){
 
 			this.WeaponPrice = shopSettings.WeaponPrice;
-			this.WeaponPrice = shopSettings.WeaponPowerUpFom;
-			this.WeaponPrice = shopSettings.WeaponPopwerUpTo;
+            this.WeaponPowerUpFrom = shopSettings.WeaponPowerUpFrom;
+            this.WeaponPowerUpTo = shopSettings.WeaponPopwerUpTo;
 
 			this.ClothesPrice = shopSettings.ClothesPrice;
 			this.ClothesMaxHealthUpFrom = shopSettings.ClothesMaxHealthUpFrom;
@@ -27,12 +27,22 @@ namespace MiniRpg.Core
 			this.PowerScale = fightSettings.PowerScale;
 
 			this.HealPrice 	= healSettings.HealPrice;
-			this.Healup 	= healSettings.Healup;
+			this.HealUp 	= healSettings.Healup;
 
 
-		} 
+		}
 
-		public Settings (int health, int money, int power) 
+	    public int WeaponPowerUpTo { 
+            get;
+            private set; 
+        }
+
+	    public int WeaponPowerUpFrom { 
+            get; 
+            private set; 
+        }
+
+	    public Settings (int health, int money, int power) 
 			: this(health, money, power, health, Enumerable.Empty<IEquipment>())
 		{
 		}
@@ -125,7 +135,7 @@ namespace MiniRpg.Core
 			private set;
 		}
 
-		public int Healup {
+		public int HealUp {
 			get;
 			private set;
 		}

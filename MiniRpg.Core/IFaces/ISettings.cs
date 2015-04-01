@@ -30,7 +30,11 @@ namespace MiniRpg.Core
 
 		int HealPrice {get;}
 
-		int Healup {get;}
+		int HealUp {get;}
+
+        int WeaponPowerUpFrom { get; }
+
+        int WeaponPowerUpTo { get; }
 	}
 
 }

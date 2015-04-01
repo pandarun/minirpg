@@ -9,7 +9,7 @@ namespace MiniRpg
 		public ShopSettings (ShopElement shopSection)
 		{
 			WeaponPrice = shopSection.Weapon.WeaponPrice;
-			WeaponPowerUpFom = shopSection.Weapon.PowerUpFrom;
+			this.WeaponPowerUpFrom = shopSection.Weapon.PowerUpFrom;
 			WeaponPopwerUpTo = shopSection.Weapon.PowerUpTo;
 			ClothesPrice = shopSection.Clothes.ClothesPrice;
 			ClothesMaxHealthUpFrom = shopSection.Clothes.MaxHealthUpFrom;
@@ -21,7 +21,7 @@ namespace MiniRpg
 			private set;
 		}
 
-		public int WeaponPowerUpFom {
+		public int WeaponPowerUpFrom {
 			get;
 			private set;
 		}
