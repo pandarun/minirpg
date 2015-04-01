@@ -131,14 +131,14 @@ namespace MiniRpg.Core
         public override string ToString ()
         {
             return string.Format (
-                @"[StateBase: 
- Health={0}, Power={1}, MaxHealth={2}, Money={3}, Equipment={4}, IsTerminal={5}
+@"
+[ 
+ Health={0}, MaxHealth={2}, Power={1}, Money={3}, IsTerminal={4}
 ]"
                 , this.Health
                 , this.Power
                 , this.MaxHealth
                 , this.Money
-                , this.PrintInventory()
                 , this.IsTerminal);
         }
 

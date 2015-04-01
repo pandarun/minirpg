@@ -7,7 +7,7 @@ namespace MiniRpg.Core
 	public class Settings : ISettings {
 
 		public Settings(PlayerSettings playerSettings, FightSettings fightSettings, ShopSettings shopSettings, HealerSettings healSettings) 
-			: this(playerSettings.Health, playerSettings.Money, playerSettings.MaxHealth){
+			: this(playerSettings.Health, playerSettings.MaxHealth, playerSettings.Money, playerSettings.Power){
 
 			this.WeaponPrice = shopSettings.WeaponPrice;
             this.WeaponPowerUpFrom = shopSettings.WeaponPowerUpFrom;
@@ -46,6 +46,11 @@ namespace MiniRpg.Core
 			: this(health, money, power, health, Enumerable.Empty<IEquipment>())
 		{
 		}
+
+        public Settings(int health, int maxHealth, int money, int power)
+            : this(health, money, power, maxHealth, Enumerable.Empty<IEquipment>())
+        {
+        }
 
 		public Settings (int health, int money, int power, int maxHealth, IEnumerable<IEquipment> equipments)
 		{
